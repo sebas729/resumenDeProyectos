@@ -124,11 +124,27 @@
               <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0"><Factory className="h-8 w-8 text-white" /></div><div><h1 className="text-4xl font-bold text-gray-900">FORSA</h1><p className="text-lg text-gray-600">Proyecto en Fase Avanzada</p></div></div>
               <Badge variant="secondary" className="bg-green-100 text-green-800 text-sm"><CheckCircle className="h-4 w-4 mr-2" />Próximo a Finalización</Badge>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-blue-600 mr-2" />Avance General</CardTitle></CardHeader><CardContent><div className="text-center"><div className="text-3xl font-bold text-green-600 mb-2">79%</div><div className="text-gray-600">Completado</div></div></CardContent></Card>
-              <Card><CardHeader><CardTitle>Progreso por Etapa</CardTitle></CardHeader><CardContent className="space-y-3"><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 2</span><span className="font-semibold text-green-600">100%</span></div><Progress value={100} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 3</span><span className="font-semibold text-blue-600">83%</span></div><Progress value={83} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 4</span><span className="font-semibold text-yellow-600">66%</span></div><Progress value={66} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 5</span><span className="font-semibold text-orange-600">68%</span></div><Progress value={68} className="h-2" /></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-orange-600 mr-2" />Acciones Pendientes</CardTitle></CardHeader><CardContent className="space-y-3"><div className="flex items-start space-x-3"><div className="w-3 h-3 bg-red-500 rounded-full mt-1 flex-shrink-0"></div><div><div className="text-sm font-medium">Análisis Viabilidad Económica</div><div className="text-xs text-gray-600">20% completado</div></div></div><div className="flex items-start space-x-3"><div className="w-3 h-3 bg-orange-500 rounded-full mt-1 flex-shrink-0"></div><div><div className="text-sm font-medium">Análisis Brechas ISO 50001</div><div className="text-xs text-gray-600">30% completado</div></div></div><div className="flex items-start space-x-3"><div className="w-3 h-3 bg-yellow-500 rounded-full mt-1 flex-shrink-0"></div><div><div className="text-sm font-medium">Ciclo de Retroalimentación</div><div className="text-xs text-gray-600">50% completado</div></div></div></CardContent></Card>
-            </div>
+            <Card>
+                <CardHeader><CardTitle>Avance General por Etapa</CardTitle></CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 2 - Inicio y Recopilación</span><span className="font-semibold text-green-600">100%</span></div><Progress value={100} /></div>
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 3 - Análisis e Instrumentos</span><span className="font-semibold text-blue-600">83%</span></div><Progress value={83} /></div>
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 4 - Ejecución y Diagnóstico</span><span className="font-semibold text-yellow-600">66%</span></div><Progress value={66} /></div>
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 5 - Informe y Cierre</span><span className="font-semibold text-orange-600">68%</span></div><Progress value={68} /></div>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-orange-600 mr-2" />Cuellos de Botella Restantes</CardTitle></CardHeader>
+                <CardContent className="space-y-3">
+                    <p>No existen obstáculos críticos, sino tareas pendientes que requieren un impulso final:</p>
+                    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>Análisis de Viabilidad Económica: <span className="font-bold text-red-600">20%</span></li>
+                        <li>Análisis de Brechas ISO 50001: <span className="font-bold text-orange-600">30%</span></li>
+                        <li>Finalización del Ciclo de Retroalimentación: <span className="font-bold text-yellow-600">50%</span></li>
+                        <li>Tareas Administrativas (Repositorio y cierre): <span className="font-bold">10%-40%</span></li>
+                    </ul>
+                </CardContent>
+            </Card>
           </div>
         )
       }
@@ -141,8 +157,28 @@
               <Badge variant="secondary" className="bg-orange-100 text-orange-800 text-sm"><AlertTriangle className="h-4 w-4 mr-2" />Requiere Atención</Badge>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-orange-600 mr-2" />Avance por Etapa</CardTitle></CardHeader><CardContent className="space-y-4"><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 2 - Inicio</span><span className="font-semibold text-green-600">100%</span></div><Progress value={100} className="h-3" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 3 - Análisis</span><span className="font-semibold text-blue-600">78%</span></div><Progress value={78} className="h-3" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 4 - Ejecución</span><span className="font-semibold text-orange-600">40%</span></div><Progress value={40} className="h-3" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 5 - Cierre</span><span className="font-semibold text-red-600">13%</span></div><Progress value={13} className="h-3" /></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-red-600 mr-2" />Cuellos de Botella Críticos</CardTitle></CardHeader><CardContent className="space-y-4"><div className="border-l-4 border-red-500 pl-4"><h4 className="font-semibold text-gray-800">Ejecución Práctica (Etapa 4)</h4><p className="text-sm text-gray-600 mb-2">Transición del análisis a generación de nuevos datos</p><div className="flex items-center space-x-2"><Progress value={10} className="h-2 flex-1" /><span className="text-sm font-semibold text-red-600">10%</span></div></div><div className="border-l-4 border-orange-500 pl-4"><h4 className="font-semibold text-gray-800">Análisis Especializado</h4><p className="text-sm text-gray-600 mb-2">Definición de indicadores y línea base</p><div className="flex items-center space-x-2"><Progress value={50} className="h-2 flex-1" /><span className="text-sm font-semibold text-orange-600">50%</span></div></div></CardContent></Card>
+              <Card>
+                  <CardHeader><CardTitle>Avance por Etapa</CardTitle></CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 2 - Recopilación</span><span className="font-semibold text-green-600">100%</span></div><Progress value={100} /></div>
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 3 - Análisis</span><span className="font-semibold text-blue-600">78%</span></div><Progress value={78} /></div>
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 4 - Ejecución</span><span className="font-semibold text-orange-600">40%</span></div><Progress value={40} /></div>
+                    <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 5 - Cierre</span><span className="font-semibold text-red-600">13%</span></div><Progress value={13} /></div>
+                  </CardContent>
+              </Card>
+              <Card>
+                  <CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-red-600 mr-2" />Cuellos de Botella Críticos</CardTitle></CardHeader>
+                  <CardContent className="space-y-4">
+                      <div className="border-l-4 border-red-500 pl-4">
+                          <h4 className="font-semibold text-gray-800">Ejecución Práctica (Etapa 4)</h4>
+                          <p className="text-sm text-gray-600 mb-2">La identificación de OPM y cálculo de ahorros está en un crítico <span className="font-bold">10%</span>.</p>
+                      </div>
+                      <div className="border-l-4 border-orange-500 pl-4">
+                          <h4 className="font-semibold text-gray-800">Análisis Especializado</h4>
+                          <p className="text-sm text-gray-600 mb-2">Tareas como proponer IDES y análisis de viabilidad tienen un avance bajo (<span className="font-bold">10%-60%</span>).</p>
+                      </div>
+                  </CardContent>
+              </Card>
             </div>
           </div>
         )
@@ -155,11 +191,22 @@
               <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><Building className="h-8 w-8 text-white" /></div><div><h1 className="text-4xl font-bold text-gray-900">Santander de Quilichao</h1><p className="text-lg text-gray-600">Etapa Intermedia con Obstáculos</p></div></div>
               <Badge variant="destructive" className="text-sm"><AlertTriangle className="h-4 w-4 mr-2" />Obstáculo Crítico</Badge>
             </div>
-            <Card className="border-red-200 bg-red-50"><CardContent className="pt-6"><div className="flex items-center space-x-4"><div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><AlertTriangle className="h-6 w-6 text-white" /></div><div><h3 className="text-xl font-bold text-red-800 mb-1">Obstáculo Crítico Identificado</h3><p className="text-red-700">La recopilación de facturas de energía está en 0% - Bloquea el avance del proyecto</p></div></div></CardContent></Card>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><TrendingUp className="h-5 w-5 text-blue-600 mr-2" />Progreso por Etapa</CardTitle></CardHeader><CardContent className="space-y-4"><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 2</span><span className="font-semibold text-orange-600">67%</span></div><Progress value={67} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 3</span><span className="font-semibold text-blue-600">72%</span></div><Progress value={72} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 4</span><span className="font-semibold text-yellow-600">41%</span></div><Progress value={41} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 5</span><span className="font-semibold text-red-600">~0%</span></div><Progress value={5} className="h-2" /></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><CheckCircle className="h-5 w-5 text-green-600 mr-2" />Actividades Completadas</CardTitle></CardHeader><CardContent className="space-y-3"><div className="flex items-center space-x-3"><CheckCircle className="h-4 w-4 text-green-600" /><span className="text-sm">Reunión inicial (100%)</span></div><div className="flex items-center space-x-3"><CheckCircle className="h-4 w-4 text-green-600" /><span className="text-sm">Visita pre-diagnóstico (100%)</span></div><div className="flex items-center space-x-3"><CheckCircle className="h-4 w-4 text-green-600" /><span className="text-sm">Variables de control (100%)</span></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-red-600 mr-2" />Tareas Críticas Pendientes</CardTitle></CardHeader><CardContent className="space-y-3"><div className="flex items-start space-x-3"><div className="w-3 h-3 bg-red-500 rounded-full mt-1 flex-shrink-0"></div><div><div className="text-sm font-medium">Facturas de energía</div><div className="text-xs text-red-600">0% - CRÍTICO</div></div></div><div className="flex items-start space-x-3"><div className="w-3 h-3 bg-orange-500 rounded-full mt-1 flex-shrink-0"></div><div><div className="text-sm font-medium">Plan de medición</div><div className="text-xs text-orange-600">30%</div></div></div></CardContent></Card>
+            <Card className="border-red-400 bg-red-50">
+                <CardHeader>
+                    <CardTitle className="flex items-center text-red-800"><AlertTriangle className="h-6 w-6 mr-3"/>Obstáculo Crítico: Falta de Información</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-red-700">El principal obstáculo es la no recopilación de <span className="font-bold">facturas de energía y planos (0% de avance)</span>. Sin esta información, es imposible realizar un diagnóstico preciso y el proyecto está paralizado.</p>
+                </CardContent>
+            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card><CardHeader><CardTitle>Progreso por Etapa</CardTitle></CardHeader><CardContent className="space-y-4"><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 2</span><span className="font-semibold text-orange-600">67%</span></div><Progress value={67} /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 3</span><span className="font-semibold text-blue-600">72%</span></div><Progress value={72} /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 4</span><span className="font-semibold text-yellow-600">41%</span></div><Progress value={41} /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 5</span><span className="font-semibold text-red-600">~0%</span></div><Progress value={5} /></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Estado de Actividades Clave</CardTitle></CardHeader><CardContent className="space-y-3">
+                  <div className="flex items-center"><CheckCircle className="h-4 w-4 text-green-600 mr-2" /><span className="text-sm">Reunión inicial y visita (100%)</span></div>
+                  <div className="flex items-center"><CheckCircle className="h-4 w-4 text-green-600 mr-2" /><span className="text-sm">Flujogramas y balances (100%)</span></div>
+                  <div className="flex items-center"><AlertTriangle className="h-4 w-4 text-red-600 mr-2" /><span className="text-sm">Recopilación de facturas (0%) - CRÍTICO</span></div>
+                  <div className="flex items-center"><AlertTriangle className="h-4 w-4 text-orange-600 mr-2" /><span className="text-sm">Ejecución del plan de medición (30%)</span></div>
+              </CardContent></Card>
             </div>
           </div>
         )
@@ -172,9 +219,15 @@
               <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0"><Building className="h-8 w-8 text-white" /></div><div><h1 className="text-4xl font-bold text-gray-900">BIVIEN</h1><p className="text-lg text-gray-600">Desafíos en Análisis Técnico</p></div></div>
               <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 text-sm"><AlertTriangle className="h-4 w-4 mr-2" />Análisis Técnico Pendiente</Badge>
             </div>
+             <Card>
+                <CardHeader><CardTitle className="flex items-center text-orange-800"><AlertTriangle className="h-5 w-5 mr-2"/>Principal Cuello de Botella</CardTitle></CardHeader>
+                <CardContent>
+                    <p className="text-orange-700">El proyecto logró recopilar el <span className="font-bold">60%</span> de la información, pero está estancado en el análisis técnico. Actividades como la creación de líneas base, indicadores y planes de medición están detenidas en un <span className="font-bold">20%</span>, lo que frena el diagnóstico.</p>
+                </CardContent>
+            </Card>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-purple-600 mr-2" />Estado del Proyecto</CardTitle></CardHeader><CardContent><div className="grid grid-cols-2 gap-4"><div className="text-center"><div className="text-3xl font-bold text-green-600 mb-2">85%</div><Progress value={85} /><div className="text-sm text-gray-600 mt-2">Sensibilización</div></div><div className="text-center"><div className="text-3xl font-bold text-orange-600 mb-2">35%</div><Progress value={35} /><div className="text-sm text-gray-600 mt-2">Análisis Técnico</div></div></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-orange-600 mr-2" />Desafíos Identificados</CardTitle></CardHeader><CardContent className="space-y-4"><div className="border-l-4 border-orange-500 pl-4 p-3 rounded-r-lg"><h4 className="font-semibold text-orange-800 mb-2">Análisis Técnico Profundo</h4><p className="text-sm text-orange-700">Requiere expertise especializado para completar el diagnóstico.</p></div><div className="border-l-4 border-red-500 pl-4 p-3 rounded-r-lg"><h4 className="font-semibold text-red-800 mb-2">Ejecución del Diagnóstico</h4><p className="text-sm text-red-700">Implementación práctica de mediciones y evaluaciones.</p></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Avance por Fase</CardTitle></CardHeader><CardContent><div className="grid grid-cols-2 gap-4"><div className="text-center"><div className="text-3xl font-bold text-green-600 mb-2">87%</div><Progress value={87} /><div className="text-sm text-gray-600 mt-2">Recopilación</div></div><div className="text-center"><div className="text-3xl font-bold text-orange-600 mb-2">39%</div><Progress value={39} /><div className="text-sm text-gray-600 mt-2">Ejecución/Análisis</div></div></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Desafíos Clave</CardTitle></CardHeader><CardContent className="space-y-4"><div className="border-l-4 border-orange-500 pl-4 p-2 rounded-r-lg"><h4 className="font-semibold text-orange-800">Análisis Técnico</h4><p className="text-sm">Líneas base e indicadores estancados en 20%</p></div><div className="border-l-4 border-red-500 pl-4 p-2 rounded-r-lg"><h4 className="font-semibold text-red-800">Ejecución de Diagnóstico</h4><p className="text-sm">Identificación de OPM en 10%</p></div></CardContent></Card>
             </div>
           </div>
         )
@@ -188,8 +241,20 @@
               <Badge variant="secondary" className="bg-green-100 text-green-800 text-sm"><TrendingUp className="h-4 w-4 mr-2" />Progreso Constante</Badge>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><TrendingUp className="h-5 w-5 text-green-600 mr-2" />Estado Actual</CardTitle></CardHeader><CardContent className="space-y-4"><div className="flex items-center justify-between p-3 bg-green-50 rounded-lg"><div className="flex items-center space-x-3"><CheckCircle className="h-5 w-5 text-green-600" /><span className="font-medium">Etapa Inicial</span></div><span className="text-green-600 font-bold">100%</span></div><div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg"><div className="flex items-center space-x-3"><BarChart3 className="h-5 w-5 text-blue-600" /><span className="font-medium">Desarrollo Técnico</span></div><span className="text-blue-600 font-bold">75%</span></div><div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg"><div className="flex items-center space-x-3"><AlertTriangle className="h-5 w-5 text-orange-600" /><span className="font-medium">Viabilidad Económica</span></div><span className="text-orange-600 font-bold">45%</span></div><div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg"><div className="flex items-center space-x-3"><Building className="h-5 w-5 text-yellow-600" /><span className="font-medium">Informe Final</span></div><span className="text-yellow-600 font-bold">40%</span></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-green-600 mr-2" />Tendencia de Progreso</CardTitle></CardHeader><CardContent className="space-y-3"><div className="space-y-2"><div className="flex justify-between text-sm"><span>Inicio</span><span className="font-semibold text-green-600">100%</span></div><Progress value={100} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Análisis</span><span className="font-semibold text-blue-600">85%</span></div><Progress value={85} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Viabilidad</span><span className="font-semibold text-orange-600">45%</span></div><Progress value={45} className="h-2" /></div><div className="space-y-2"><div className="flex justify-between text-sm"><span>Informe</span><span className="font-semibold text-red-600">40%</span></div><Progress value={40} className="h-2" /></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Estado por Etapa</CardTitle></CardHeader><CardContent className="space-y-4">
+                  <div className="flex items-center justify-between p-2 bg-green-50 rounded-lg"><div className="flex items-center space-x-3"><CheckCircle className="h-5 w-5 text-green-600" /><span className="font-medium">Recopilación</span></div><span className="text-green-600 font-bold">100%</span></div>
+                  <div className="flex items-center justify-between p-2 bg-blue-50 rounded-lg"><div className="flex items-center space-x-3"><BarChart3 className="h-5 w-5 text-blue-600" /><span className="font-medium">Análisis</span></div><span className="text-blue-600 font-bold">57%</span></div>
+                  <div className="flex items-center justify-between p-2 bg-yellow-50 rounded-lg"><div className="flex items-center space-x-3"><TrendingUp className="h-5 w-5 text-yellow-600" /><span className="font-medium">Ejecución</span></div><span className="text-yellow-600 font-bold">50%</span></div>
+                  <div className="flex items-center justify-between p-2 bg-red-50 rounded-lg"><div className="flex items-center space-x-3"><AlertTriangle className="h-5 w-5 text-red-600" /><span className="font-medium">Cierre</span></div><span className="text-red-600 font-bold">15%</span></div>
+              </CardContent></Card>
+              <Card><CardHeader><CardTitle>Cuellos de Botella Actuales</CardTitle></CardHeader><CardContent className="space-y-3">
+                  <p className="text-sm">El proyecto avanza bien, pero requiere enfoque en:</p>
+                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>Análisis de viabilidad económica: <span className="font-bold">30%</span></li>
+                        <li>Diagnóstico ambiental: <span className="font-bold">20%</span></li>
+                        <li>Ciclo de retroalimentación con la empresa: <span className="font-bold text-red-600">0%</span></li>
+                    </ul>
+              </CardContent></Card>
             </div>
           </div>
         )
@@ -202,10 +267,18 @@
               <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><Factory className="h-8 w-8 text-white" /></div><div><h1 className="text-4xl font-bold text-gray-900">BERRY GLOBAL</h1><p className="text-lg text-gray-600">Situación Crítica</p></div></div>
               <Badge variant="destructive" className="text-sm"><AlertTriangle className="h-4 w-4 mr-2" />Crítico</Badge>
             </div>
-            <Card className="border-red-200 bg-red-50"><CardContent className="pt-6"><div className="flex items-center space-x-6"><div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><AlertTriangle className="h-8 w-8 text-white" /></div><div><h3 className="text-2xl font-bold text-red-800 mb-2">SITUACIÓN CRÍTICA</h3><p className="text-red-700 text-lg">Falta de recopilación de facturas de energía bloquea completamente el avance.</p></div></div></CardContent></Card>
+            <Card className="border-red-400 bg-red-50">
+                <CardHeader><CardTitle className="text-red-800 flex items-center"><AlertTriangle className="h-6 w-6 mr-3"/>Parálisis Funcional por Falta de Datos</CardTitle></CardHeader>
+                <CardContent>
+                    <p className="text-red-700">El proyecto está completamente estancado. La <span className="font-bold">recopilación de facturas de energía y planos se encuentra en 0%</span>. Este es el punto de origen de todos los demás problemas, invalidando el resto del plan de trabajo.</p>
+                </CardContent>
+            </Card>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-red-600 mr-2" />Estado del Proyecto</CardTitle></CardHeader><CardContent><div className="text-center"><div className="text-5xl font-bold text-red-600">25%</div><Progress value={25} /><div className="text-sm text-gray-600 mt-2">Solo sensibilización completada</div></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-red-600 mr-2" />Actividades Bloqueadas</CardTitle></CardHeader><CardContent className="space-y-4"><div className="flex items-center p-3 bg-red-50 rounded-lg border-l-4 border-red-500"><AlertTriangle className="h-5 w-5 text-red-600 mr-3" /><div><div className="font-medium text-red-800">Recopilación de Facturas</div><div className="text-sm text-red-600">0% - BLOQUEADOR CRÍTICO</div></div></div><div className="flex items-center p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"><BarChart3 className="h-5 w-5 text-gray-400 mr-3" /><div><div className="font-medium text-gray-500">Análisis Energético</div><div className="text-sm text-gray-500">Dependiente de facturas</div></div></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Contraste: Formación vs. Técnica</CardTitle></CardHeader><CardContent>
+                  <div className="text-center"><div className="text-3xl font-bold text-green-600">100%</div><p className="text-sm text-gray-600">Seminarios de sensibilización completados.</p></div>
+                  <div className="text-center mt-4"><div className="text-3xl font-bold text-red-600">10-30%</div><p className="text-sm text-gray-600">Avance en actividades técnicas y de análisis.</p></div>
+              </CardContent></Card>
+              <Card><CardHeader><CardTitle>Actividades Bloqueadas</CardTitle></CardHeader><CardContent className="space-y-4"><div className="flex items-center p-2 bg-red-50 rounded-lg border-l-4 border-red-500"><AlertTriangle className="h-5 w-5 text-red-600 mr-3" /><div><div className="font-medium text-red-800">Recopilación de Facturas (0%)</div></div></div><div className="flex items-center p-2 bg-gray-100 rounded-lg border-l-4 border-gray-400"><BarChart3 className="h-5 w-5 text-gray-400 mr-3" /><div><div className="font-medium text-gray-500">Análisis Energético (Inviable)</div></div></div></CardContent></Card>
             </div>
           </div>
         )
@@ -218,10 +291,23 @@
               <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"><img src="https://logowik.com/content/uploads/images/goodyear-tire-rubber-company5102.jpg" alt="Goodyear Logo" className="h-8 w-auto rounded-full"/></div><div><h1 className="text-4xl font-bold text-gray-900">GOODYEAR</h1><p className="text-lg text-gray-600">Caso de Éxito</p></div></div>
               <Badge variant="secondary" className="bg-green-100 text-green-800 text-sm"><CheckCircle className="h-4 w-4 mr-2" />Caso de Éxito</Badge>
             </div>
-            <Card className="border-green-200 bg-green-50"><CardContent className="pt-6"><div className="flex items-center space-x-6"><div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="h-8 w-8 text-white" /></div><div><h3 className="text-2xl font-bold text-green-800 mb-2">PROYECTO MODELO</h3><p className="text-green-700 text-lg">Ejecución muy avanzada con progreso consistente.</p></div></div></CardContent></Card>
+            <Card className="border-green-300 bg-green-50"><CardContent className="pt-6"><div className="flex items-center space-x-6"><div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="h-8 w-8 text-white" /></div><div><h3 className="text-2xl font-bold text-green-800 mb-2">PROYECTO MODELO</h3><p className="text-green-700 text-lg">Ejecución muy avanzada con progreso consistente y colaboración efectiva.</p></div></div></CardContent></Card>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-green-600 mr-2" />Progreso General</CardTitle></CardHeader><CardContent><div className="text-center space-y-4"><div className="text-5xl font-bold text-green-600">92%</div><Progress value={92} className="h-4" /><div className="text-gray-600">Completado</div></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><CheckCircle className="h-5 w-5 text-green-600 mr-2" />Logros Destacados</CardTitle></CardHeader><CardContent className="space-y-4"><div className="flex items-center p-3 bg-green-50 rounded-lg"><TrendingUp className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" /><div><div className="font-medium text-gray-800">Progreso Consistente</div></div></div><div className="flex items-center p-3 bg-green-50 rounded-lg"><Building className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" /><div><div className="font-medium text-gray-800">Colaboración Efectiva</div></div></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Progreso General por Etapa</CardTitle></CardHeader><CardContent className="space-y-3">
+                  <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 2 - Recopilación</span><span className="font-semibold text-green-600">100%</span></div><Progress value={100}/></div>
+                  <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 3 - Análisis</span><span className="font-semibold text-blue-600">76%</span></div><Progress value={76}/></div>
+                  <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 4 - Ejecución</span><span className="font-semibold text-blue-600">86%</span></div><Progress value={86}/></div>
+                  <div className="space-y-2"><div className="flex justify-between text-sm"><span>Etapa 5 - Cierre</span><span className="font-semibold text-green-600">91%</span></div><Progress value={91}/></div>
+              </CardContent></Card>
+              <Card><CardHeader><CardTitle>Tareas Menores por Finalizar</CardTitle></CardHeader><CardContent className="space-y-2">
+                  <p className="text-sm">El proyecto está casi listo, solo falta:</p>
+                   <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>Análisis de Brechas ISO 50001: <span className="font-bold text-red-600">0%</span></li>
+                        <li>Elaboración de flujograma y balance: <span className="font-bold">50%</span></li>
+                        <li>Ajustes finales al informe: <span className="font-bold">80%</span></li>
+                        <li>Cierre formal: <span className="font-bold">50%</span></li>
+                    </ul>
+              </CardContent></Card>
             </div>
           </div>
         )
@@ -234,9 +320,15 @@
               <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><Truck className="h-8 w-8 text-white" /></div><div><h1 className="text-4xl font-bold text-gray-900">CARVAL</h1><p className="text-lg text-gray-600">Fase Temprana con Bloqueos</p></div></div>
               <Badge variant="destructive" className="text-sm"><AlertTriangle className="h-4 w-4 mr-2" />Bloqueos Significativos</Badge>
             </div>
+             <Card className="border-red-400 bg-red-50">
+                <CardHeader><CardTitle className="text-red-800 flex items-center"><AlertTriangle className="h-6 w-6 mr-3"/>Estancamiento Severo</CardTitle></CardHeader>
+                <CardContent>
+                    <p className="text-red-700">El proyecto está paralizado. La <span className="font-bold">recolección de datos es de solo el 30%</span> y tareas clave como la elaboración de balances energéticos y el cálculo de ahorros se encuentran en <span className="font-bold">0%</span>. El avance técnico es casi nulo.</p>
+                </CardContent>
+            </Card>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-red-600 mr-2" />Contraste de Avance</CardTitle></CardHeader><CardContent className="space-y-4"><div className="flex justify-between items-center"><span className="text-sm">Seminarios</span><span className="font-semibold text-green-600">100%</span></div><div className="flex justify-between items-center"><span className="text-sm">Recopilación Datos</span><span className="font-semibold text-red-600">0%</span></div><div className="flex justify-between items-center"><span className="text-sm">Análisis Técnico</span><span className="font-semibold text-orange-600">15%</span></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><AlertTriangle className="h-5 w-5 text-red-600 mr-2" />Bloqueos Identificados</CardTitle></CardHeader><CardContent className="space-y-4"><div className="border-l-4 border-red-500 pl-4 p-3 rounded-r-lg"><h4 className="font-semibold text-red-800 mb-2">Principal Obstáculo</h4><p className="text-sm text-red-700">Falta de recopilación de facturas de energía</p></div><div className="border-l-4 border-orange-500 pl-4 p-3 rounded-r-lg"><h4 className="font-semibold text-orange-800 mb-2">Tareas Técnicas</h4><p className="text-sm text-orange-700">Progreso mínimo en actividades técnicas</p></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Contraste de Avance</CardTitle></CardHeader><CardContent className="space-y-4"><div className="flex justify-between items-center"><span className="text-sm">Seminarios</span><span className="font-semibold text-green-600">100%</span></div><div className="flex justify-between items-center"><span className="text-sm">Recopilación Datos</span><span className="font-semibold text-red-600">30%</span></div><div className="flex justify-between items-center"><span className="text-sm">Análisis Técnico</span><span className="font-semibold text-orange-600">~22%</span></div></CardContent></Card>
+              <Card><CardHeader><CardTitle>Bloqueos Críticos</CardTitle></CardHeader><CardContent className="space-y-4"><div className="border-l-4 border-red-500 pl-4 p-2 rounded-r-lg"><h4 className="font-semibold text-red-800">Recolección de Datos Incompleta (30%)</h4></div><div className="border-l-4 border-orange-500 pl-4 p-2 rounded-r-lg"><h4 className="font-semibold text-orange-800">Parálisis del Análisis Técnico (Balances en 0%)</h4></div></CardContent></Card>
             </div>
           </div>
         )
@@ -250,8 +342,22 @@
               <Badge variant="secondary" className="bg-orange-100 text-orange-800 text-sm"><AlertTriangle className="h-4 w-4 mr-2" />Enfoque Renovado Requerido</Badge>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card><CardHeader><CardTitle className="flex items-center"><BarChart3 className="h-5 w-5 text-orange-600 mr-2" />Análisis Comparativo</CardTitle></CardHeader><CardContent><div className="space-y-2"><div className="flex justify-between"><span className="font-medium">Capacitación</span><span>100% / 100%</span></div><div className="flex justify-between"><span className="font-medium">Recopilación</span><span className="text-red-600">0%</span> / <span className="text-green-600">100%</span></div><div className="flex justify-between"><span className="font-medium">Análisis</span><span>30% / 35%</span></div></div></CardContent></Card>
-              <Card><CardHeader><CardTitle className="flex items-center"><Sync className="h-5 w-5 text-orange-600 mr-2" />Patrones Comunes</CardTitle></CardHeader><CardContent className="space-y-4"><div className="border-l-4 border-green-500 pl-4 p-3 rounded-r-lg"><h4 className="font-semibold text-green-800">Fortaleza Compartida</h4><p className="text-sm text-green-700">Capacitación completada.</p></div><div className="border-l-4 border-red-500 pl-4 p-3 rounded-r-lg"><h4 className="font-semibold text-red-800">DAGMA - Obstáculo</h4><p className="text-sm text-red-700">Falta de facturas de energía.</p></div><div className="border-l-4 border-orange-500 pl-4 p-3 rounded-r-lg"><h4 className="font-semibold text-orange-800">SOFTYS - Paradoja</h4><p className="text-sm text-orange-700">Datos completos pero análisis estancado.</p></div></CardContent></Card>
+              <Card>
+                  <CardHeader><CardTitle>DAGMA: Bloqueado por Datos</CardTitle></CardHeader>
+                  <CardContent>
+                      <p className="text-sm mb-4">Estancado por una baja recopilación de facturas (<span className="font-bold">30%</span>). El análisis técnico está paralizado.</p>
+                      <div className="space-y-2"><div className="flex justify-between text-xs"><span>Recopilación</span><span className="font-semibold text-red-600">30%</span></div><Progress value={30} /></div>
+                      <div className="space-y-2 mt-2"><div className="flex justify-between text-xs"><span>Análisis</span><span className="font-semibold text-orange-600">37%</span></div><Progress value={37} /></div>
+                  </CardContent>
+              </Card>
+              <Card>
+                  <CardHeader><CardTitle>SOFTYS: Paradoja de Análisis</CardTitle></CardHeader>
+                  <CardContent>
+                      <p className="text-sm mb-4">Tuvo una recopilación de datos exitosa (<span className="font-bold">100%</span>), pero el proyecto está estancado en la fase de análisis. Balances y flujogramas en <span className="font-bold">0%</span>.</p>
+                       <div className="space-y-2"><div className="flex justify-between text-xs"><span>Recopilación</span><span className="font-semibold text-green-600">100%</span></div><Progress value={100} /></div>
+                      <div className="space-y-2 mt-2"><div className="flex justify-between text-xs"><span>Análisis</span><span className="font-semibold text-orange-600">38%</span></div><Progress value={38} /></div>
+                  </CardContent>
+              </Card>
             </div>
           </div>
         )
