@@ -116,6 +116,66 @@
           </div>
         )
       }
+      
+      function ResumenEjecutivoSlide() {
+        const summaryData = [
+          { empresa: 'FORSA', avanzada: 'Etapa 2 (100%), Etapa 5 (68%)', critica: 'Viabilidad Económica (20%), ISO 50001 (30%)', estado: 'Avanzado', statusColor: 'green' },
+          { empresa: 'Tecnoquímicas', avanzada: 'Etapa 2 (100%)', critica: 'Diagnóstico y análisis (Etapa 4, 40%)', estado: 'Medio, con rezagos', statusColor: 'yellow' },
+          { empresa: 'Santander Q.', avanzada: 'Etapa 3 (72%)', critica: 'Recolección de energía (0%)', estado: 'Estancado parcial', statusColor: 'orange' },
+          { empresa: 'BIVIEN', avanzada: 'Etapa 2 (87%)', critica: 'Análisis técnico (20%), Diagnóstico (10-20%)', estado: 'Medio-bajo', statusColor: 'yellow' },
+          { empresa: 'Río Paila', avanzada: 'Etapa 2 (100%), Etapa 4 (50%)', critica: 'Diagnóstico ambiental (20%), cierre (0%)', estado: 'Avanzado', statusColor: 'green' },
+          { empresa: 'Berry Global', avanzada: 'Seminarios 100%', critica: 'Recolección de datos (0%), Análisis técnico (10-30%)', estado: 'Estancado grave', statusColor: 'red' },
+          { empresa: 'Goodyear', avanzada: 'Etapa 5 (91%)', critica: 'Brechas ISO 50001 (0%), cierre formal (50%)', estado: 'Muy avanzado', statusColor: 'green' },
+          { empresa: 'CARVAL', avanzada: 'Seminarios (100%)', critica: 'Balance energético (0%), recomendaciones inconsistentes', estado: 'Estancado técnico', statusColor: 'red' },
+          { empresa: 'DAGMA', avanzada: 'Seminarios (100%)', critica: 'Diagnóstico (10-20%), retroalimentación (0%)', estado: 'Estancado técnico', statusColor: 'red' },
+          { empresa: 'SOFTYS', avanzada: 'Etapa 2 (100%)', critica: 'Flujograma y balance (0%), análisis económico (0%)', estado: 'Estancado parcial', statusColor: 'orange' },
+        ];
+
+        const getStatusBadge = (status, color) => {
+          let colorClasses = '';
+          switch (color) {
+            case 'green': colorClasses = 'bg-green-100 text-green-800'; break;
+            case 'yellow': colorClasses = 'bg-yellow-100 text-yellow-800'; break;
+            case 'orange': colorClasses = 'bg-orange-100 text-orange-800'; break;
+            case 'red': colorClasses = 'bg-red-100 text-red-800'; break;
+            default: colorClasses = 'bg-gray-100 text-gray-800';
+          }
+          return <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${colorClasses}`}>{status}</span>;
+        };
+
+        return (
+          <div className="space-y-8">
+            <div>
+              <h1 className="text-4xl font-bold text-gray-900">Resumen Ejecutivo Global</h1>
+              <p className="text-lg text-gray-600">Vista general del estado de todos los proyectos.</p>
+            </div>
+            <Card className="overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Empresa</th>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Etapa más avanzada</th>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Etapa crítica o bloqueada</th>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado general</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {summaryData.map((item) => (
+                      <tr key={item.empresa}>
+                        <td className="px-6 py-4 whitespace-nowrap"><div className="text-sm font-medium text-gray-900">{item.empresa}</div></td>
+                        <td className="px-6 py-4 whitespace-nowrap"><div className="text-sm text-gray-600">{item.avanzada}</div></td>
+                        <td className="px-6 py-4 whitespace-nowrap"><div className="text-sm text-gray-600">{item.critica}</div></td>
+                        <td className="px-6 py-4 whitespace-nowrap">{getStatusBadge(item.estado, item.statusColor)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          </div>
+        );
+      }
 
       function ForsaSlide() {
         return (
@@ -288,7 +348,9 @@
         return (
           <div className="space-y-8">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"><img src="https://logowik.com/content/uploads/images/goodyear-tire-rubber-company5102.jpg" alt="Goodyear Logo" className="h-8 w-auto rounded-full"/></div><div><h1 className="text-4xl font-bold text-gray-900">GOODYEAR</h1><p className="text-lg text-gray-600">Caso de Éxito</p></div></div>
+              <div className="flex items-center space-x-4"><div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0">
+                <img src="https://1000logos.net/wp-content/uploads/2017/01/Goodyear-Logo.png" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/100x40/00205B/FFFFFF?text=GOODYEAR'; }} alt="Goodyear Logo" className="h-8 w-auto"/>
+                </div><div><h1 className="text-4xl font-bold text-gray-900">GOODYEAR</h1><p className="text-lg text-gray-600">Caso de Éxito</p></div></div>
               <Badge variant="secondary" className="bg-green-100 text-green-800 text-sm"><CheckCircle className="h-4 w-4 mr-2" />Caso de Éxito</Badge>
             </div>
             <Card className="border-green-300 bg-green-50"><CardContent className="pt-6"><div className="flex items-center space-x-6"><div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0"><CheckCircle className="h-8 w-8 text-white" /></div><div><h3 className="text-2xl font-bold text-green-800 mb-2">PROYECTO MODELO</h3><p className="text-green-700 text-lg">Ejecución muy avanzada con progreso consistente y colaboración efectiva.</p></div></div></CardContent></Card>
@@ -369,6 +431,7 @@
 
         const slides = [
             { id: 'intro', title: 'Introducción', component: IntroSlide },
+            { id: 'resumen', title: 'Resumen Global', component: ResumenEjecutivoSlide },
             { id: 'forsa', title: 'FORSA', component: ForsaSlide },
             { id: 'tecnoquimicas', title: 'Tecnoquímicas', component: TecnoquimicasSlide },
             { id: 'goodyear', title: 'GOODYEAR', component: GoodyearSlide },
